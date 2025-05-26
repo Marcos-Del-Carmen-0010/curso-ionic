@@ -10,6 +10,10 @@ export const routes: Routes = [
     loadChildren: () => import('./store/store.module').then((m) => m.StoreModule),
   },
   {
+    path: 'contact',
+    loadChildren: () => import('./contact/contact.module').then((m) => m.ContactModule),
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
