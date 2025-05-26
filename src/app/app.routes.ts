@@ -14,6 +14,10 @@ export const routes: Routes = [
     loadChildren: () => import('./contact/contact.module').then((m) => m.ContactModule),
   },
   {
+    path: 'not-found',
+    loadComponent: () => import('./shared/pages/not-fount/not-fount.component').then((m) => m.NotFountComponent),
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
