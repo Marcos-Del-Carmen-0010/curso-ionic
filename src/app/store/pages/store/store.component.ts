@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HomeModel } from 'src/app/models/Home.models';
 
 @Component({
   selector: 'app-store',
@@ -7,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./store.component.scss'],
 })
 export class StoreComponent  implements OnInit {
+
+  public carrito: HomeModel.Store.ICarrito = {};
+  public items: HomeModel.Store.IProducto = {};
+  public pedido: HomeModel.Store.IPedido = {};
 
   constructor() { }
 

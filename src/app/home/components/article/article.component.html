@@ -1,3 +1,17 @@
-<p>
-  articleeeee works!
-</p>
+<ion-card>
+  @if (articles.length > 0) {
+    @for (item of articles; track $index) {
+      <img alt="Silhouette of mountains" [src]="item.image.url"/>
+      <ion-card-header>
+        <ion-card-title>{{item.title}}</ion-card-title>
+        <ion-card-subtitle>$ {{item.price}}</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{item.description}}
+      </ion-card-content>
+    }
+  } @else {
+    
+  }
+</ion-card>
