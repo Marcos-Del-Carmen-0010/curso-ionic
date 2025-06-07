@@ -1,6 +1,12 @@
-<ion-card>
-  @if (articles.length > 0) {
-    @for (item of articles; track $index) {
+<ion-card style="padding: .5rem;">
+  <ion-input label="Search product" (keydown)="validateInput($event)" placeholder="Name product"></ion-input>
+</ion-card>
+<div class="cont-carrito">
+  <p class="cont-detalle-carrito">Cant: {{cant}} | Total: ${{total}}</p>
+</div>
+@if(!cargando) {
+  @for (item of articles; track $index) {
+    <ion-card>
       <img alt="Silhouette of mountains" [src]="item.image.url"/>
       <ion-card-header>
         <ion-card-title>{{item.title}}</ion-card-title>
@@ -10,8 +16,16 @@
       <ion-card-content>
         {{item.description}}
       </ion-card-content>
-    }
-  } @else {
-    
+      <ion-button (click)="removeProduct(item)" shape="round">
+        <ion-icon name="remove"></ion-icon>
+      </ion-button>
+      <ion-button (click)="addProduct(item)" shape="round">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </ion-card>
+  } @empty {
+    <p class="text-center">No hay articulos</p>
   }
-</ion-card>
+} @else {
+  <p class="text-center">Cargando...</p>
+}
