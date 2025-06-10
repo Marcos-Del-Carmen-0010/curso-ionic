@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { addIcons } from 'ionicons';
+import { notifications } from 'ionicons/icons';
 @Component({
   selector: 'app-icon-notification',
   standalone: false,
@@ -8,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IconNotificationComponent  implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    addIcons({ notifications});
+  }
 
   ngOnInit() {}
 

@@ -8,6 +8,7 @@ import { HomeModel } from 'src/app/models/Home.models';
   styleUrls: ['./store.component.scss'],
 })
 export class StoreComponent  implements OnInit {
+  public title = 'Tienda';
   public pedido: HomeModel.Store.IPedido = {};
 
   constructor() { }

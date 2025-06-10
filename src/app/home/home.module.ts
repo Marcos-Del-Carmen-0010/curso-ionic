@@ -7,10 +7,12 @@ import { HomeComponent } from './pages/home/home.component';
 import { ArticleComponent } from './components/article/article.component';
 import { SharedModule } from '../shared/shared.module';
 import { IonButton, IonIcon } from '@ionic/angular/standalone';
+import { ProductDetailComponent } from '../store/components/product-detail/product-detail.component';
 @NgModule({
   declarations: [
     HomeComponent,
     ArticleComponent,
+    ProductDetailComponent,
   ],
   imports: [
     CommonModule,
