@@ -11,7 +11,7 @@ export class ArticleService {
 
   constructor() { }
 
-  catArticles() {
+  getArticles() {
     // Simulate an API call with a delay
     return of([
       {
@@ -20,7 +20,7 @@ export class ArticleService {
         description: 'Clásica pizza italiana con tomate, mozzarella y albahaca fresca.',
         price: 12,
         cantidad: 1,
-        image: 'https://ionicframework.com/docs/img/demos/card-media.png',
+        image: '../../assets/img/comida.jpg',
       },
       {
         id: 2,
@@ -28,7 +28,7 @@ export class ArticleService {
         description: 'Deliciosa pizza con pepperoni y queso derretido.',
         price: 14,
         cantidad: 5,
-        image: 'https://ionicframework.com/docs/img/demos/card-media.png',
+        image: '../../assets/img/comida.jpg',
       },
       {
         id: 3,
@@ -36,7 +36,7 @@ export class ArticleService {
         description: 'Pizza con una variedad de verduras frescas y queso.',
         price: 13,
         cantidad: 20,
-        image: 'https://ionicframework.com/docs/img/demos/card-media.png',
+        image: '../../assets/img/comida.jpg',
       },
       {
         id: 4,
@@ -44,7 +44,7 @@ export class ArticleService {
         description: 'Ensalada fresca con lechuga, pollo a la parrilla, crutones y aderezo César.',
         price: 10,
         cantidad: 5,
-        image: 'https://ionicframework.com/docs/img/demos/card-media.png',
+        image: '../../assets/img/comida.jpg',
       },
       {
         id: 5,
@@ -52,7 +52,7 @@ export class ArticleService {
         description: 'Refrescante limonada con agua mineral y un toque de menta.',
         price: 5,
         cantidad: 5,
-        image: 'https://ionicframework.com/docs/img/demos/card-media.png',
+        image: '../../assets/img/comida.jpg',
       }
     ]);
   }
