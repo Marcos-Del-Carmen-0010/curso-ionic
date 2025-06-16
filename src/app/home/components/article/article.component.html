@@ -8,7 +8,7 @@
 }
 @if(!cargando) {
   @for (item of articles; track $index) {
-    <app-product-detail [product]="item" [carrito]="carrito"/>
+    <app-product-detail [product]="item"> </app-product-detail>
   } @empty {
     <p class="text-center">No hay articulos</p>
   }

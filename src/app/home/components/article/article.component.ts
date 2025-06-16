@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HomeModel } from 'src/app/models/Home.models';
 
 import { ArticleService } from 'src/app/services/article.service';
+import {CarritoService} from "../../../services/carrito.service";
 @Component({
   selector: 'app-article',
   standalone: false,
@@ -33,7 +34,7 @@ export class ArticleComponent implements OnInit {
   }
 
   loadArticle() {
-    setTimeout(() => { 
+    setTimeout(() => {
       this._serviceArticle.getArticles().subscribe((articles: HomeModel.Store.IProducto[]) => {
         this.articles = articles;
       }, (error: any) => {
@@ -46,5 +47,4 @@ export class ArticleComponent implements OnInit {
   validateInput(event: Event )  {
     console.log('Evento de validación:', event.target);
   }
-
 }
