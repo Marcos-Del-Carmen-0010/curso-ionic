@@ -1,19 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HomeModel } from "../models/Home.models";
 import { ToastService } from "./toast.service";
+import { Subject } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarritoService {
-  // public cantidad: number;
+  private carrito$ = new Subject<HomeModel.Store.ICarrito>;
   public carrito: HomeModel.Store.ICarrito;
 
   constructor(
     private _serviceToast: ToastService,
   ) {
-    // this.cantidad = 0;
     this.initCarrito();
+  }
+
+  getCarritoChanges() {
+    return this.carrito$.asObservable();
   }
 
   private initCarrito() {
@@ -31,7 +35,6 @@ export class CarritoService {
       return;
     }
     product.cantidad--;
-    // this.cantidad++;
     this.carrito.productos.every((item:any) => {
       if (item.items.id == product.id) {
         item.cant++;
@@ -58,12 +61,10 @@ export class CarritoService {
     });
     this.carrito.total = total;
     this.carrito.cantidadTotal = cantidadTotal;
+    this.carrito$.next(this.carrito);
   }
 
   removeProduct(product: HomeModel.Store.IProducto) {
-    // if(this.cantidad > 0) {
-    //  this.cantidad--;
-    // }
     const exits = this.carrito.productos.find((productCart: any) => productCart.items.id === product.id);
     if (exits) {
       exits.cant--;

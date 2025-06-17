@@ -18,11 +18,16 @@ export class ArticleComponent implements OnInit {
 
   constructor(
     private _serviceArticle :ArticleService,
+    private _serviceCarrito :CarritoService,
   ) { }
 
   ngOnInit() {
     this.loadArticle();
     this.initCarrito();
+    this.carrito = this._serviceCarrito.carrito;
+    this._serviceCarrito.getCarritoChanges().subscribe(change=> {
+      this.carrito = change;
+    });
   }
 
   initCarrito() {

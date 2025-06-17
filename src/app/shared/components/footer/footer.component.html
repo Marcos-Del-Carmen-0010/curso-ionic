@@ -13,5 +13,11 @@
       <ion-icon name="call"></ion-icon>
       Contact
     </ion-tab-button>
+    @if (cantidad > 0) {
+      <ion-tab-button>
+        <p class="icon-cont">{{cantidad}}</p>
+      </ion-tab-button>
+    }
   </ion-tab-bar>
+
 </ion-tabs>
