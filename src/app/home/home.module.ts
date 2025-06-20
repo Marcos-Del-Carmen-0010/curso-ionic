@@ -15,6 +15,9 @@ import {IonicModule} from "@ionic/angular";
     ArticleComponent,
     ProductDetailComponent,
   ],
+  exports: [
+    ArticleComponent
+  ],
   imports: [
     CommonModule,
     HomeRoutingModule,
