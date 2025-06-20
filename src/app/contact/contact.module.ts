@@ -6,6 +6,7 @@ import { ContactRoutingModule } from './contact-routing.module';
 import { FormContactComponent } from './components/form-contact/form-contact.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { SharedModule } from '../shared/shared.module';
+import {DetailCarritoComponent} from "../comonents/detail-carrito/detail-carrito.component";
 
 
 @NgModule({
@@ -13,11 +14,12 @@ import { SharedModule } from '../shared/shared.module';
     FormContactComponent,
     ContactComponent,
   ],
-  imports: [
-    CommonModule,
-    ContactRoutingModule,
-    SharedModule,
-    IonContent
-  ]
+    imports: [
+        CommonModule,
+        ContactRoutingModule,
+        SharedModule,
+        IonContent,
+        DetailCarritoComponent,
+    ]
 })
 export class ContactModule { }

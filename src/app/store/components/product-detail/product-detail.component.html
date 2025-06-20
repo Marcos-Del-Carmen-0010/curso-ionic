@@ -1,14 +1,19 @@
 <ion-card>
   <img alt="Silhouette of mountains" [src]="product.image"/>
   <ion-card-header>
-    <ion-card-title>{{product.title}}</ion-card-title>
+    <ion-card-title>{{product.title}} <ion-chip *ngIf="product.cantidad === 0" color="danger" style="margin: 0px">Agotado</ion-chip></ion-card-title>
     <ion-card-subtitle>$ {{product.price}} </ion-card-subtitle>
-    <ion-card-subtitle>Cantidad: {{product.cantidad}}</ion-card-subtitle>
+    @if (product.cantidad > 0) {
+      <ion-card-subtitle>Cantidad: {{product.cantidad}}</ion-card-subtitle>
+    }
   </ion-card-header>
 
   <ion-card-content>
     {{product.description}}
   </ion-card-content>
+
+
+
   <ion-button (click)="removeProduct(product)" [disabled]="cantidad === 0">
     <ion-icon name="remove"></ion-icon>
   </ion-button>

@@ -1,11 +1,7 @@
 <ion-card style="padding: .5rem;">
   <ion-input label="Search product" (keydown)="validateInput($event)" placeholder="Name product"></ion-input>
 </ion-card>
-@if(carrito) {
-  <div class="cont-carrito">
-    <p class="cont-detalle-carrito">Cant: {{carrito.cantidadTotal}} | Total: ${{carrito.total.toFixed(2)}}</p>
-  </div>
-}
+<app-detail-carrito></app-detail-carrito>
 @if(!cargando) {
   @for (item of articles; track $index) {
     <app-product-detail [product]="item"> </app-product-detail>

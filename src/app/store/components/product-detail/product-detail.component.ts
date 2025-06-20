@@ -1,9 +1,7 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HomeModel } from 'src/app/models/Home.models';
-import { ToastService } from 'src/app/services/toast.service';
 import { addIcons } from 'ionicons';
 import { add, remove } from 'ionicons/icons';
-import {IonicModule} from "@ionic/angular";
 import {CarritoService} from "../../../services/carrito.service";
 
 @Component({

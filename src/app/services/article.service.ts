@@ -43,7 +43,7 @@ export class ArticleService {
         title: 'Ensalada César',
         description: 'Ensalada fresca con lechuga, pollo a la parrilla, crutones y aderezo César.',
         price: 10,
-        cantidad: 5,
+        cantidad: 0,
         image: '../../assets/img/comida.jpg',
       },
       {
