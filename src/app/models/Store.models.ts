@@ -10,6 +10,7 @@ export namespace StoreModel {
     export interface IPedido {
 
     }
+
     export interface ICarrito {
         total: number;
         cantidadTotal: number;
@@ -17,5 +18,12 @@ export namespace StoreModel {
             items: IProducto,
             cant: number;
         }[];
+    }
+
+    export interface IArticle {
+      id?: number;
+      userId: number;
+      title:  string;
+      body:  string;
     }
 }

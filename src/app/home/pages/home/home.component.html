@@ -1,6 +1,17 @@
 <ion-content>
   <app-header [title]="title"></app-header>
+  <app-detail-carrito></app-detail-carrito>
+  <ion-grid>
+    @if (articles) {
+      @for (article of articles; track article.id) {
+        <app-article [article]="article"></app-article>
+      }
+    } @else {
+      <ion-row>
+        <p style="text-align: center">Cargando...</p>
+      </ion-row>
+    }
+  </ion-grid>
 
-<!--  <app-article></app-article>-->
   <app-footer></app-footer>
 </ion-content>

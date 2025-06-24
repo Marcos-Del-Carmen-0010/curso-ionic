@@ -8,21 +8,21 @@ export class WebService {
 
   constructor(private http: HttpClient) { }
 
-  request(type: 'POST' | 'GET', url: string, path:string, body?: any) {
-    return new Promise((resolve, reject) => {
+  request<Response>(type: 'POST' | 'GET', url: string, path:string, body?: any) {
+    return new Promise<Response>((resolve, reject) => {
       const  headers = new HttpHeaders({
         'Content-Type': 'application/json'
       });
 
       if(type === 'POST') {
-        this.http.post(url + '/' + path, body, {headers}).subscribe((data:any)=>{
+        this.http.post<Response>(url + '/' + path, body, {headers}).subscribe((data:any)=>{
           resolve(data);
           return;
         })
       }
 
       if(type === 'GET') {
-        this.http.get(url + '/' + path, {headers}).subscribe((data:any)=>{
+        this.http.get<Response>(url + '/' + path, {headers}).subscribe((data:any)=>{
           resolve(data);
           return;
         })

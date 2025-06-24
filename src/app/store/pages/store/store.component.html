@@ -1,6 +1,15 @@
-<ion-content>
-  <app-header [title]="title"></app-header>
-  <!--  <app-detail-carrito></app-detail-carrito>-->
-  <app-article></app-article>
-  <app-footer></app-footer>
-</ion-content>
+<app-header [title]="title"></app-header>
+  <ion-card style="padding: .5rem;">
+    <ion-input label="Search product" (keydown)="validateInput($event)" placeholder="Name product"></ion-input>
+  </ion-card>
+  <app-detail-carrito></app-detail-carrito>
+  @if(!cargando) {
+    @for (item of articles; track $index) {
+      <app-product-detail [product]="item"> </app-product-detail>
+    } @empty {
+      <p class="text-center">No hay articulos</p>
+    }
+  } @else {
+    <p class="text-center">Cargando...</p>
+  }
+<app-footer></app-footer>

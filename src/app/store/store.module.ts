@@ -8,6 +8,7 @@ import { StoreComponent } from './pages/store/store.component';
 import { SharedModule } from '../shared/shared.module';
 import {DetailCarritoComponent} from "../comonents/detail-carrito/detail-carrito.component";
 import {HomeModule} from "../home/home.module";
+import {IonicModule} from "@ionic/angular";
 
 
 @NgModule({
@@ -15,13 +16,14 @@ import {HomeModule} from "../home/home.module";
     ProductComponent,
     StoreComponent,
   ],
-  imports: [
-    CommonModule,
-    StoreRoutingModule,
-    IonContent,
-    SharedModule,
-    DetailCarritoComponent,
-    HomeModule,
-  ]
+    imports: [
+        CommonModule,
+        StoreRoutingModule,
+        IonContent,
+        SharedModule,
+        DetailCarritoComponent,
+        HomeModule,
+        IonicModule,
+    ]
 })
 export class StoreModule { }
