@@ -1,3 +1,24 @@
-<p>
-  form-contact works!
-</p>
+<ion-list class="p-05">
+  <ion-item class="p-0 m-0">
+    <ion-input labelPlacement="floating" type="email" [(ngModel)]="form.email">
+      <div slot="label" class="label-text"> Email <ion-text color="danger" *ngIf="error">(Required)</ion-text></div>
+    </ion-input>
+  </ion-item>
+
+  <ion-item class="p-0 m-0">
+    <ion-input labelPlacement="floating" type="text" [(ngModel)]="form.name">
+      <div slot="label" class="label-text">Nombre  </div>
+    </ion-input>
+  </ion-item>
+
+  <ion-item class="p-0 m-0">
+    <ion-input labelPlacement="floating" type="tel" [(ngModel)]="form.phone">
+      <div slot="label" class="label-text">Celular  </div>
+    </ion-input>
+  </ion-item>
+  <ion-item class="b-0">
+    <ion-button class="content-center" (click)="enviar()">
+      Enviar
+    </ion-button>
+  </ion-item>
+</ion-list>

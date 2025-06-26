@@ -10,9 +10,13 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'article/:id',
+    path: 'article',
     component: ArticlePageComponent,
-  }
+  },
+  // {
+  //   path: 'article/:id/:b',
+  //   component: ArticlePageComponent,
+  // }
 ];
 
 @NgModule({

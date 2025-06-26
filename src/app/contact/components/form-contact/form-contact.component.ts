@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {HomeModel} from "../../../models/Home.models";
 
 @Component({
   selector: 'app-form-contact',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form-contact.component.scss'],
 })
 export class FormContactComponent  implements OnInit {
-
-  constructor() { }
+  public error: boolean;
+  public form: HomeModel.Contact.IContact = {
+    email: '',
+    name: '',
+    phone: ''
+  }
+  constructor() {
+    this.error = false;
+  }
 
   ngOnInit() {}
 
+  enviar() {
+    this.error = !this.form.email;
+  }
 }

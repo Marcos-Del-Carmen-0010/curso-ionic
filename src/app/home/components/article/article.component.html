@@ -8,7 +8,11 @@
       <ion-card-content>
         {{article.body}}
       </ion-card-content>
-      <ion-button (click)="goToArticle()">Go to</ion-button>
+      <ion-button
+        (click)="goToArticle()"
+      >Go to</ion-button>
+<!--      [routerLink]="['/article/']"-->
+<!--      [queryParams]="{id: article.id}"-->
     </ion-card>
   </ion-col>
 </ion-row>

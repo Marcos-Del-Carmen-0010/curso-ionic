@@ -82,3 +82,31 @@
     text-align: center;
 }
 
+// PAGGID Y MARGENES
+
+.p-0 {
+  padding: 0 !important;
+}
+
+.m-0 {
+  margin: 0 !important;
+}
+
+.b-0 {
+  border: none;
+  --inner-border-width: 0;
+}
+
+
+// centrar contenedor
+
+.d-flex {
+  display: flex;
+}
+
+.content-center {
+  margin: 0 auto;
+}
+
+
+

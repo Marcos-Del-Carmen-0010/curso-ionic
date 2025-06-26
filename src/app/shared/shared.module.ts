@@ -6,6 +6,7 @@ import { NotificationsModule } from '../notifications/notifications.module';
 import { IonContent, IonHeader, IonIcon, IonTab, IonTabBar, IonTabButton, IonTabs, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 import { RouterModule } from '@angular/router';
 import {CarritoComponent} from "./components/carrito/carrito.component";
+import {IonicModule} from "@ionic/angular";
 
 
 @NgModule({

@@ -15,6 +15,12 @@ export class ArticleComponent implements OnInit {
   ngOnInit() {}
 
   goToArticle() {
-    this._router.navigate([`/article/${this.article.id}`]);
+    this._router.navigate(['/article'], {
+      queryParams: {
+        id: this.article.id,
+        b: 'Hola mundo'
+      }
+    });
+    // this._router.navigate(['/article/'+this.article.id], )
   }
 }
