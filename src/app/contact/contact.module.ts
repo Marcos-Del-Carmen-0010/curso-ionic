@@ -7,7 +7,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { SharedModule } from '../shared/shared.module';
 import {DetailCarritoComponent} from "../comonents/detail-carrito/detail-carrito.component";
 import {IonicModule} from "@ionic/angular";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -15,13 +15,14 @@ import {FormsModule} from "@angular/forms";
     FormContactComponent,
     ContactComponent,
   ],
-    imports: [
-        CommonModule,
-        ContactRoutingModule,
-        SharedModule,
-        DetailCarritoComponent,
-        IonicModule,
-        FormsModule,
-    ]
+  imports: [
+    CommonModule,
+    ContactRoutingModule,
+    SharedModule,
+    DetailCarritoComponent,
+    IonicModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ]
 })
 export class ContactModule { }

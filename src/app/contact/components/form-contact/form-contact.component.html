@@ -22,3 +22,33 @@
     </ion-button>
   </ion-item>
 </ion-list>
+
+
+<h2>Formulario reactivo</h2>
+<form [formGroup]="datosForm" (ngSubmit)="enviarFormulario()">
+  <ion-list class="p-05">
+    <ion-item class="p-0 m-0">
+      <ion-input labelPlacement="floating" type="email"  formControlName="email">
+        <div slot="label" class="label-text"> Email <ion-text color="danger" *ngIf="datosForm.controls['email'].hasError('required')">(Required)</ion-text></div>
+      </ion-input>
+    </ion-item>
+    <span *ngIf="datosForm.controls['email'].hasError('email')">El correo no es validio</span>
+    <ion-item class="p-0 m-0">
+      <ion-input labelPlacement="floating" type="text" formControlName="name">
+        <div slot="label" class="label-text">Nombre <ion-text color="danger" *ngIf="datosForm.controls['name'].hasError('required')">(Required)</ion-text> </div>
+      </ion-input>
+    </ion-item>
+
+    <ion-item class="p-0 m-0">
+      <ion-input labelPlacement="floating" type="tel" formControlName="phone">
+        <div slot="label" class="label-text">Celular  </div>
+      </ion-input>
+    </ion-item>
+    <span *ngIf="datosForm.controls['phone'].hasError('mal')">Para el télefono son 10 dígitos</span>
+    <ion-item class="b-0">
+      <ion-button class="content-center" type="submit">
+        Enviar
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</form>
