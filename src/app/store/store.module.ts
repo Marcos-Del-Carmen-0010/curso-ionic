@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonContent } from '@ionic/angular/standalone';
 
 import { StoreRoutingModule } from './store-routing.module';
 import { ProductComponent } from './pages/product/product.component';
@@ -16,14 +15,13 @@ import {IonicModule} from "@ionic/angular";
     ProductComponent,
     StoreComponent,
   ],
-    imports: [
-        CommonModule,
-        StoreRoutingModule,
-        IonContent,
-        SharedModule,
-        DetailCarritoComponent,
-        HomeModule,
-        IonicModule,
-    ]
+  imports: [
+      CommonModule,
+      StoreRoutingModule,
+      SharedModule,
+      DetailCarritoComponent,
+      HomeModule,
+      IonicModule,
+  ]
 })
 export class StoreModule { }
