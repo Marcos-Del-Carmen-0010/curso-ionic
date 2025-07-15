@@ -1,12 +1,17 @@
 export namespace StoreModel {
     export interface IProducto {
         id?: number;
+        date?: Date;
         title: string;
         description: string;
         price: number;
         cantidad: number;
         image?: string
+        enable?: boolean;
+        categories?: string[];
+        salty?: boolean;
     }
+
     export interface IPedido {
 
     }

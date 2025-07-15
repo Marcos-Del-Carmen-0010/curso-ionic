@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig: {
+    apiKey: "AIzaSyCRyckgnAg76PusyJwZW2Yoy3H33MKPiWs",
+    authDomain: "curso-ionic-back.firebaseapp.com",
+    projectId: "curso-ionic-back",
+    storageBucket: "curso-ionic-back.firebasestorage.app",
+    messagingSenderId: "149857538179",
+    appId: "1:149857538179:web:3b723e0cc8535661880bb6",
+    measurementId: "G-R43HWXEX9F"
+  }
 };
 
 /*
@@ -14,3 +23,4 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
