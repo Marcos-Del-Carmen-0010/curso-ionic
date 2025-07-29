@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { HomeModel } from 'src/app/models/Home.models';
+import {Component, OnInit} from '@angular/core';
+import {HomeModel} from 'src/app/models/Home.models';
 import {ArticleService} from "../../../services/article.service";
 import {CarritoService} from "../../../services/carrito.service";
 import {FirebaseService} from "../../../services/firebase.service";
@@ -82,25 +82,24 @@ export class StoreComponent  implements OnInit {
 
   async getCategoria(id?: string) {
     this.categoriaSelect = id;
+    console.log('categoria id:', id);
     if (this.categoriaSelect != id) {
-      this.articles = null;
+      this.articles = [];
       this.cargando = true;
-
     }
-    const numsItems = 2;
+    const numsItems = 4;
     const path = 'Products';
     let query = [['categories','array-contains', id]];
-    const extras = {
-      orderParam: 'date',
+
+    const extras : HomeModel.FireBase.extrasQuery = {
+      // orderParam: 'date',
       directionSort: 'asc',
       limit: numsItems,
     }
 
     if(this.articles) {
       const last = this.articles[this.articles.length - 1];
-      const snapDoc = await this._serviceFireBase.getDocument(`${path}/${last.id}`)
-      // @ts-ignore
-      extras.startAfter = snapDoc
+      extras.startAfter = await this._serviceFireBase.getDocument(`${path}/${last.id}`);
     }
 
     this._serviceFireBase.getDocumentsQueryChanges(path, query, extras).subscribe( (res: any) => {

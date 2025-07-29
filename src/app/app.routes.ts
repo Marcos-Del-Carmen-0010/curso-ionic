@@ -2,8 +2,13 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
+  },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
   },
   {
     path: 'store',
@@ -18,12 +23,11 @@ export const routes: Routes = [
     loadComponent: () => import('./shared/pages/not-fount/not-fount.component').then((m) => m.NotFountComponent),
   },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
+    path: 'login',
+    loadComponent: () => import('./login/login.page').then( m => m.LoginPage)
   },
   {
-    path: '**',    
+    path: '**',
     loadComponent: () => import('./shared/pages/not-fount/not-fount.component').then((m) => m.NotFountComponent),
   },
 ];

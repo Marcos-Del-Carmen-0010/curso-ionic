@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 import {FirebaseService} from "./services/firebase.service";
 import {HomeModel} from "./models/Home.models";
+import {AutenticationService} from "./services/autentication.service";
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,14 @@ import {HomeModel} from "./models/Home.models";
   imports: [IonApp, IonRouterOutlet],
 })
 export class AppComponent {
-  constructor(private _serviceFireBase: FirebaseService) {
+  constructor(
+    private _serviceFireBase: FirebaseService,
+    private _auth: AutenticationService,
+    ) {
     // this.saveProduct();
     // this.updateProduct();
     // this.getProducts();
+    // this.registrarse();
   }
 
   async saveProduct() {
@@ -119,7 +124,14 @@ export class AppComponent {
     }
   }
 
-
+  async registrarse() {
+    const form = {email: 'marcos@gmail.com', password: '123456'};
+    console.log('registro ->', form);
+    if(form.email && form.password) {
+      const user = await this._auth.createUser(form.email, form.password);
+      console.log(user);
+    }
+  }
 
   getProducts() {
     const path = 'Products';

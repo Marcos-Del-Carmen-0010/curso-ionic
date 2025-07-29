@@ -71,12 +71,6 @@
     color: var(--ion-color-primary-contrast);
 }
 
-
-.d-flex {
-    display: flex;
-}
-
-
 // TEXTOS
 .text-center {
     text-align: center;
@@ -97,11 +91,20 @@
   --inner-border-width: 0;
 }
 
+// anchos
+.w-100 {
+  width: 100% !important;
+}
 
 // centrar contenedor
 
 .d-flex {
   display: flex;
+}
+
+.justify-content-center {
+  display: flex;
+  justify-content: center;
 }
 
 .content-center {

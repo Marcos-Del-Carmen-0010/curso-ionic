@@ -11,13 +11,10 @@
         </ion-segment-button>
       }
     </ion-segment>
+<!--    @if(!cargando) {-->
       @for (item of articles; track $index) {
          <app-product-detail [product]="item"> </app-product-detail>
       }
-<!--    @if(!cargando) {-->
-<!--      @empty {-->
-<!--         <p class="text-center">No hay articulos</p> -->
-<!--      }-->
 <!--    } @else {-->
 <!--      <p class="text-center">Cargando...</p>-->
 <!--    }-->
