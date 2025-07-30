@@ -29,20 +29,19 @@ export class FirebaseService {
 
   }
 
-  async crearDocumento() {
-    try {
-      console.log('firestore', this.firestore);
-      const docRef = await addDoc(
-        collection(this.firestore, "users"),
-        {
-          first: "Ada",
-          last: "Lovelace",
-          born: 1815
-        });
-      console.log("Document written with ID: ", docRef.id);
-    } catch (e) {
-      console.error("Error adding document: ", e);
+  async crearDocumento<tipo>(path: string, data: tipo, id?: string) {
+    let refDoc;
+    if (id) {
+      refDoc = doc(this.firestore, `${path}/${id}`);
+    } else {
+      const refCollection = collection(this.firestore, path);
+      refDoc = doc(refCollection);
     }
+    const dataDoc: any = data;
+    dataDoc.id = refDoc.id;
+    dataDoc.date = serverTimestamp();
+    await setDoc(refDoc, dataDoc);
+    return dataDoc.id;
   }
 
   async crearColecion<tipo>(path: string, data: tipo) {
