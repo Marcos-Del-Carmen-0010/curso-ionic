@@ -1,0 +1,22 @@
+<app-header [title]="title"></app-header>
+  <ion-content>
+    <ion-card style="padding: .5rem;">
+      <ion-input label="Search product" placeholder="Name product"></ion-input>
+    </ion-card>
+    <app-detail-carrito></app-detail-carrito>
+    <ion-segment [value]="categoriaSelect" style="margin: 1rem auto 2.5rem auto; width: 80%;">
+      @for(item of categorias; track $index) {
+        <ion-segment-button [value]="item.id" (click)="getCategoria(item.id)">
+          <ion-label>{{item.name}}</ion-label>
+        </ion-segment-button>
+      }
+    </ion-segment>
+<!--    @if(!cargando) {-->
+      @for (item of articles; track $index) {
+         <app-product-detail [product]="item"> </app-product-detail>
+      }
+<!--    } @else {-->
+<!--      <p class="text-center">Cargando...</p>-->
+<!--    }-->
+  <app-footer></app-footer>
+  </ion-content>

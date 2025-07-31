@@ -1,0 +1,27 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { StoreRoutingModule } from './store-routing.module';
+import { ProductComponent } from './pages/product/product.component';
+import { StoreComponent } from './pages/store/store.component';
+import { SharedModule } from '../shared/shared.module';
+import {DetailCarritoComponent} from "../comonents/detail-carrito/detail-carrito.component";
+import {HomeModule} from "../home/home.module";
+import {IonicModule} from "@ionic/angular";
+
+
+@NgModule({
+  declarations: [
+    ProductComponent,
+    StoreComponent,
+  ],
+  imports: [
+      CommonModule,
+      StoreRoutingModule,
+      SharedModule,
+      DetailCarritoComponent,
+      HomeModule,
+      IonicModule,
+  ]
+})
+export class StoreModule { }
