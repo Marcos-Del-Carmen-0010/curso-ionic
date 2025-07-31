@@ -49,7 +49,7 @@ export class RegisterPage implements OnInit {
         let datosUser: HomeModel.Auth.UserProfile = {
           name: data.name,
           photo: data.photo,
-          age: data.ege,
+          age: data.age,
           id: res.user.uid,
           email: data.email
         }
@@ -57,7 +57,7 @@ export class RegisterPage implements OnInit {
         let usuario = await this._serviceFirebase.crearDocumento(HomeModel.Auth.PathUsers, datosUser, res.user.uid);
         console.log('usuario creado con éxito', usuario);
       } catch (err){
-
+        console.warn('error: ', err);
       }
     } else {
       console.log('¡algo anda mal!');
